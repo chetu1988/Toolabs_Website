@@ -99,51 +99,122 @@ a {
 }
 
 /* ==================== NAVBAR STYLES ==================== */
+/* Default navbar for all pages (visible with teal background) */
 .custom-navbar {
-    background: transparent;
-    padding: 1.5rem 0;
+    background: linear-gradient(135deg, var(--primary) 0%, #087f8d 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(10, 145, 160, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Transparent navbar overlay - ONLY for home page */
+.page-home .custom-navbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 1rem 0;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    box-shadow: none;
 }
 
 .navbar-logo {
     height: 50px;
     width: auto;
+    transition: height 0.3s ease;
 }
 
+/* Bigger logo for home page - isolated to not affect navbar height */
+.page-home .navbar-logo {
+    height: 70px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+/* Default nav links (white text on teal navbar) */
 .custom-navbar-nav .nav-link {
-    color: var(--primary) !important;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.5rem 1.25rem !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.25rem 0.75rem 1.25rem !important;
     margin: 0 0.25rem;
     border-radius: 6px;
     transition: background 0.3s ease, color 0.3s ease;
     background: transparent;
+    position: relative;
 }
 
 .custom-navbar-nav .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #087f8d !important;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .custom-navbar-nav .nav-item.active .nav-link {
-    background: var(--primary);
-    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--secondary) !important;
 }
 
+/* Home page nav links (teal text on transparent navbar) */
+.page-home .custom-navbar-nav .nav-link {
+    color: var(--primary) !important;
+    font-weight: 600;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.page-home .custom-navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.page-home .custom-navbar-nav .nav-link:hover {
+    background: transparent;
+    color: #087f8d !important;
+}
+
+.page-home .custom-navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+.page-home .custom-navbar-nav .nav-item.active .nav-link {
+    background: transparent;
+    color: var(--primary) !important;
+}
+
+.page-home .custom-navbar-nav .nav-item.active .nav-link::after {
+    width: 100%;
+}
+
+/* Default toggler (white on teal navbar) */
 .navbar-toggler {
-    border-color: var(--primary);
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230A91A0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+/* Home page toggler (teal icon) */
+.page-home .navbar-toggler {
+    border-color: var(--primary);
+}
+
+.page-home .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230A91A0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.page-home .navbar-toggler:focus {
     box-shadow: 0 0 0 0.2rem rgba(10, 145, 160, 0.25);
 }
 
@@ -170,90 +241,19 @@ a:hover {
 }
 
 /* ==================== NAVIGATION ==================== */
-.custom-navbar {
-    background: var(--primary) !important;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    box-shadow: var(--shadow-md);
-}
+/* All navbar styles are now defined in the NAVBAR STYLES section above (lines 101-168) */
 
-.custom-navbar .navbar-brand {
-    font-size: 32px;
-    font-weight: 700;
-    color: #ffffff !important;
-    letter-spacing: -0.02em;
-}
-
-.custom-navbar .navbar-brand>span {
-    color: var(--secondary);
-    font-weight: 800;
-}
-
-.custom-navbar .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.custom-navbar .navbar-toggler:active,
-.custom-navbar .navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-}
-
-.custom-navbar .custom-navbar-nav li {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.custom-navbar .custom-navbar-nav li a {
-    font-weight: 500;
-    color: #ffffff !important;
-    opacity: 0.85;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 8px 0;
-}
-
-.custom-navbar .custom-navbar-nav li a:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--secondary);
-    height: 3px;
-    opacity: 0;
-    visibility: hidden;
-    width: 0;
-    transition: 0.2s all ease-out;
-    border-radius: 2px;
-}
-
-.custom-navbar .custom-navbar-nav li a:hover {
-    opacity: 1;
-}
-
-.custom-navbar .custom-navbar-nav li a:hover:before {
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-}
-
-.custom-navbar .custom-navbar-nav li.active a {
-    opacity: 1;
-}
-
-.custom-navbar .custom-navbar-nav li.active a:before {
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-}
 
 /* ==================== HERO SECTION ==================== */
 .hero {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    padding: 6rem 0 4rem 0;
+    padding: 5rem 0 4rem 0;
     position: relative;
     overflow: hidden;
+    min-height: 300px;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
 }
 
 .hero::before {
@@ -1215,6 +1215,8 @@ a:hover {
 @media (max-width: 991px) {
     .hero {
         padding: 4rem 0 3rem 0;
+        min-height: 250px;
+        max-height: 250px;
     }
 
     .hero-video {
