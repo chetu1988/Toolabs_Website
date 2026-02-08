@@ -310,9 +310,11 @@ a:hover {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 0 !important;
     margin-bottom: 0;
     background: none !important;
+    position: relative;
+    margin-top: 0 !important;
 }
 
 .hero-video::before {
@@ -1210,10 +1212,13 @@ a:hover {
     font-size: 0.9rem;
 }
 
-/* ==================== RESPONSIVE ==================== */
 @media (max-width: 991px) {
     .hero {
         padding: 4rem 0 3rem 0;
+    }
+
+    .hero-video {
+        padding: 0 !important;
     }
 
     .hero h1 {
@@ -1236,6 +1241,10 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    .hero-video {
+        padding: 0 !important;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
