@@ -312,6 +312,11 @@ a:hover {
     align-items: center;
     padding: 0;
     margin-bottom: 0;
+    background: none !important;
+}
+
+.hero-video::before {
+    display: none;
 }
 
 .hero-video-bg {
