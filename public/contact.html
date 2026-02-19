@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -16,6 +16,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <title>Contact Us - Toolabs</title>
+
+    <!-- Firebase Analytics -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB76_GObZyeSxnX_6DxGVGYa7t-oQtGEds",
+        authDomain: "toolabs-website-e30e1.firebaseapp.com",
+        projectId: "toolabs-website-e30e1",
+        storageBucket: "toolabs-website-e30e1.firebasestorage.app",
+        messagingSenderId: "705193561847",
+        appId: "1:705193561847:web:1755c3e4928f4bb4d54df2",
+        measurementId: "G-LEMEJEMXD6"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
 </head>
 
 <body>
