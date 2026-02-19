@@ -1,11 +1,10 @@
 {
   "hosting": {
-    "public": "public_clean",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "**/*.mp4"
+      "**/node_modules/**"
     ]
   }
 }
