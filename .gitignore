@@ -25,3 +25,8 @@ build/
 # Personal notes
 notes.txt
 *.bak
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
