@@ -609,6 +609,10 @@ a:hover {
     height: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature-card::before {
@@ -676,6 +680,8 @@ a:hover {
     margin: 0;
     position: relative;
     z-index: 1;
+    text-align: center;
+    /* Force center */
 }
 
 /* ==================== TECHNOLOGIES SECTION ==================== */
@@ -1080,7 +1086,7 @@ a:hover {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
     position: relative;
-    height: 450px;
+    height: 500px;
     gap: 10px;
     /* Small gap for clean separation */
     margin-right: -2rem;
@@ -1187,33 +1193,46 @@ a:hover {
 }
 
 /* ==================== CUSTOM LIST ==================== */
+/* ==================== CUSTOM LIST ==================== */
+/* ==================== CUSTOM LIST ==================== */
 .custom-list {
     width: 100%;
     padding: 0;
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
+    gap: 1rem;
+    /* Space between cards */
 }
 
 .custom-list li {
-    display: inline-block;
-    width: calc(50% - 20px);
-    margin-bottom: 12px;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 28px;
+    display: flex;
+    align-items: center;
+    /* Vertically center */
+    justify-content: center;
+    /* Horizontally center */
+    text-align: center;
+    /* Center text alignment */
+    height: 100%;
+    /* Ensure full height filling */
+    padding: 1rem 1.25rem;
+    background-color: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.4;
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
 
-.custom-list li:before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid var(--primary);
-    position: absolute;
-    left: 0;
-    top: 8px;
-    background: var(--primary-light);
+.custom-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+    background-color: #f8fafc;
 }
 
 /* ==================== FOOTER ==================== */
@@ -1317,8 +1336,8 @@ a:hover {
         margin-bottom: 2rem;
     }
 
-    .custom-list li {
-        width: 100%;
+    .custom-list {
+        grid-template-columns: 1fr;
     }
 }
 
