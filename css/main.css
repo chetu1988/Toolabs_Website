@@ -153,40 +153,33 @@ a {
 }
 
 /* Home page nav links (teal text on transparent navbar) */
+/* Home page nav links (modern minimalistic) */
 .page-home .custom-navbar-nav .nav-link {
-    color: var(--primary) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    /* Soft white */
     background: transparent;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    position: relative;
 }
 
+/* Remove old underline */
 .page-home .custom-navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: var(--secondary);
-    transition: width 0.3s ease;
-    border-radius: 2px;
+    display: none;
 }
 
 .page-home .custom-navbar-nav .nav-link:hover {
     background: transparent;
-    color: #087f8d !important;
-}
-
-.page-home .custom-navbar-nav .nav-link:hover::after {
-    width: 80%;
+    color: var(--secondary) !important;
+    /* Yellow accent on hover */
 }
 
 .page-home .custom-navbar-nav .nav-item.active .nav-link {
     background: transparent;
-    color: var(--primary) !important;
-}
-
-.page-home .custom-navbar-nav .nav-item.active .nav-link::after {
-    width: 100%;
+    color: var(--secondary) !important;
+    /* Yellow accent for active */
+    font-weight: 600;
 }
 
 /* Default toggler (white on teal navbar) */
